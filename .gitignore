@@ -1,0 +1,15 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Database (keep raw local logs out of remote repo)
+*.db
+
+# IDE Files
+.vscode/
+.idea/

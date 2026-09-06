@@ -1,0 +1,11 @@
+services:
+  dashboard:
+    build: .
+    ports:
+      - "8080:8080"
+  
+  simulator:
+    build: .
+    command: python simulator.py
+    depends_on:
+      - dashboard
