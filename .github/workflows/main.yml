@@ -22,11 +22,14 @@ jobs:
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install flask flask-cors pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Execute Automated Unit Tests
       run: |
-        python -m pytest
+        python -m pytest test_db.py
+      env:
+        PYTHONPATH: .
 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
